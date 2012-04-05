@@ -19,6 +19,7 @@ using System.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using MonoTouch.Dialog;
+using System.Drawing;
 
 namespace ChannelGuide
 {
@@ -31,6 +32,7 @@ namespace ChannelGuide
 		// class-level declarations
 		UIWindow window;
 		DialogViewController dvc;
+		UIScrollView scrollView;
 
 		//
 		// This method is invoked when the application has loaded and is ready to run. In this 
@@ -43,10 +45,16 @@ namespace ChannelGuide
 		{
 			// create a new window instance based on the screen size
 			window = new UIWindow (UIScreen.MainScreen.Bounds);
-			
+			window.RootViewController = new UIViewController();
+			//scrollView = new UIScrollView();
+			//window.RootViewController.View = scrollView;
 			dvc = new DialogViewController(UITableViewStyle.Plain,CreateRoot());
-			window.RootViewController = dvc;
 			
+			//scrollView.ContentSize = new SizeF(1000,1000);
+			//dvc.TableView.Frame = new RectangleF(PointF.Empty,scrollView.ContentSize);
+			//scrollView.AddSubview(dvc.TableView);
+			dvc.TableView.ContentSize = new SizeF(1000,1000);
+			window.RootViewController = dvc;
 			// make the window visible
 			window.MakeKeyAndVisible ();
 			
@@ -55,6 +63,7 @@ namespace ChannelGuide
 		
 		private RootElement CreateRoot ()
 		{
+			#region Channels
 			List<Channel> Channels = new List<Channel> (){
 				new Channel{
 					Name = "MYST",
@@ -75,9 +84,4428 @@ namespace ChannelGuide
 						new Show{Title = "Awkward.",X= .75f,Width = .125f},
 						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
 					}
-				}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
+				new Channel{
+					Name = "MYST",
+					Shows = new List<Show>{
+						new Show{Title = "Law & Order",X= 0,Width = .25f},
+						new Show{Title = "Haven",X= .25f,Width = .25f},
+						new Show{Title = "Desperate Escape",X= .5f,Width = .5f},
+					}
+				},
+				new Channel{
+					Name = "MTV2CAN",
+					Shows = new List<Show>{
+						new Show{Title = "Instant Star",X= 0,Width = .125f},
+						new Show{Title = "Instant Star",X= .125f,Width = .125f},
+						new Show{Title = "Whistler",X= .25f,Width = .25f},
+						new Show{Title = "Peak Season",X= .5f,Width = .125f},
+						new Show{Title = "Ridiculousn...",X= .625f,Width = .125f},
+						new Show{Title = "Awkward.",X= .75f,Width = .125f},
+						new Show{Title = "The Hard Times of RJ Berger",X= .875f,Width = .125f},
+					}
+				},
 			};
 			
+#endregion
+			Console.WriteLine("Count:" + Channels.Count);
 			var section = new Section ();
 			foreach (var channel in Channels) {
 				section.Add (new ChannelElement (channel));

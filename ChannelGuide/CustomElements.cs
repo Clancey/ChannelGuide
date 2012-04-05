@@ -94,8 +94,6 @@ namespace ChannelGuide
 					foreach(var button in oldButtons)
 					{
 						button.RemoveFromSuperview();
-						buttons.Remove(button);
-						button.Dispose();
 					}
 					
 				
